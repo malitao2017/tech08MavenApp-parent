@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+  	<groupId>com.techstar</groupId>
+  	<artifactId>tech08MavenApp-parent</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>tech08MavenApp-child-web</artifactId>
+  <packaging>war</packaging>
+  
+  <dependencies>
+  	<!-- 依赖service，由于依赖的传递性，同时可以使用service依赖的util的相关包 -->
+  	<dependency>
+  		<groupId>com.techstar</groupId>
+  		<artifactId>tech08MavenApp-child-service</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  	
+  	<!-- servlet/jsp api ,否则 jsp页面报错-->
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>servlet-api</artifactId>
+  		<version>2.5</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet.jsp</groupId>
+  		<artifactId>jsp-api</artifactId>
+  		<version>2.1</version>
+  		<scope>provided</scope>	
+  	</dependency>
+  	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>tech08MavenApp-child-web</finalName>
+  </build>
+</project>
